@@ -52,4 +52,28 @@ function updateSuggestions(inputValue, suggestionsElementId) {
 
 
 
-  
+  // Assuming a maximum student count for scaling the bar chart
+const maxStudentCount = 15000; // Adjust this based on your data
+
+// Calculating the height of the bars as a percentage
+const school1BarHeight = (parseInt(school1Data["Number of\nStudents"], 10) / maxStudentCount) * 100;
+const school2BarHeight = (parseInt(school2Data["Number of\nStudents"], 10) / maxStudentCount) * 100;
+
+// Update the innerHTML for School 1's bar chart
+const school1StudentsChart = document.getElementById('school1-students-chart');
+school1StudentsChart.innerHTML = `
+    <p>Number of Students: ${school1Data["Number of\nStudents"]}</p>
+    <div class="vertical-bar-chart">
+        <div class="bar" style="height: ${school1BarHeight}%; background-color: #007bff;"></div>
+    </div>
+`;
+
+// Update the innerHTML for School 2's bar chart
+const school2StudentsChart = document.getElementById('school2-students-chart');
+school2StudentsChart.innerHTML = `
+    <p>Number of Students: ${school2Data["Number of\nStudents"]}</p>
+    <div class="vertical-bar-chart">
+        <div class="bar" style="height: ${school2BarHeight}%; background-color: #28a745;"></div>
+    </div>
+`;
+

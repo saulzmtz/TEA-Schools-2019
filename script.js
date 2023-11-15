@@ -89,6 +89,7 @@ function displaySchoolData(school1Data, school2Data) {
         <p>Charter: ${school2Data.Charter}</p>
     `;
 
+     
 
   
 }

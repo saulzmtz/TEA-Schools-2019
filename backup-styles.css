@@ -27,3 +27,19 @@ OLD SUGGESTIONS
     }
     
 
+    .vertical-bar-chart {
+        width: 50px; /* or as per design requirement */
+        height: 200px; /* Maximum height of the bar chart */
+        border: 1px solid #ddd;
+        position: relative;
+        margin: 20px auto; /* Center align */
+    }
+    
+    .bar {
+        width: 100%;
+        position: absolute;
+        bottom: 0; /* Align bar to bottom */
+        background-color: #007bff; /* Color of the bar */
+        transition: height 0.5s ease;
+    }
+    

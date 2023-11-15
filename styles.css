@@ -46,6 +46,31 @@ body {
     background-color: #0056b3;
 }
 
+/* Search suggestions drop down */
+/* Add to your styles.css */
+.suggestions {
+    border: 1px solid #ddd;
+    border-top: none;
+    position: absolute;
+    z-index: 1000;
+    width: 200px; /* Match the width of your input fields */
+    background: white;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
 
 /* Styling the Data Display Section */
 
@@ -92,3 +117,4 @@ body {
         width: 150px;
     }
 }
+

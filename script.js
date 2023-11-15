@@ -16,3 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(data); // This is just for testing to see if data loads
     });
 });
+
+
+document.getElementById('school1-search').addEventListener('input', function() {
+    updateSuggestions(this.value, 'school1-suggestions');
+});
+
+document.getElementById('school2-search').addEventListener('input', function() {
+    updateSuggestions(this.value, 'school2-suggestions');
+});
+
+
+function updateSuggestions(inputValue, suggestionsElementId) {
+    const inputLower = inputValue.toLowerCase();
+    const filteredSchools = schoolsData.filter(school => 
+        school.Campus.toLowerCase().includes(inputLower)
+    );
+
+    const suggestionsElement = document.getElementById(suggestionsElementId);
+    suggestionsElement.innerHTML = ''; // Clear previous suggestions
+
+    filteredSchools.forEach(school => {
+        const div = document.createElement('div');
+        div.textContent = school.Campus;
+        div.onclick = function() {
+            document.getElementById(suggestionsElementId.replace('suggestions', 'search')).value = school.Campus;
+            suggestionsElement.innerHTML = ''; // Clear suggestions after selection
+        };
+        suggestionsElement.appendChild(div);
+    });
+}

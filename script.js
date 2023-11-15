@@ -72,6 +72,7 @@ function displaySchoolData(school1Data, school2Data) {
         <p>District: ${school1Data.District}</p>
         <p>County: ${school1Data.County}</p>
         <p>${school1Data.Region}</p>
+        <p>${school1Data["School\nType"]}</p>
     `;
 
     // Display basic information for School 2
@@ -81,6 +82,7 @@ function displaySchoolData(school1Data, school2Data) {
         <p>District: ${school2Data.District}</p>
         <p>County: ${school2Data.County}</p>
         <p>${school2Data.Region}</p>
+        <p>${school2Data["School\nType"]}</p>
     `;
 }
 

@@ -29,17 +29,24 @@ document.getElementById('school2-search').addEventListener('input', function() {
     updateSuggestions(this.value, 'school2-suggestions');
 });
 
-
 function updateSuggestions(inputValue, suggestionsElementId) {
+    if (!schoolsData || schoolsData.length === 0) {
+        console.error('Schools data is not loaded');
+        return;
+    }
+
     const inputLower = inputValue.toLowerCase();
     const filteredSchools = schoolsData.filter(school => 
         school.Campus.toLowerCase().includes(inputLower)
     );
 
+    // Limiting the number of suggestions to 3
+    const limitedSchools = filteredSchools.slice(0, 5);
+
     const suggestionsElement = document.getElementById(suggestionsElementId);
     suggestionsElement.innerHTML = ''; // Clear previous suggestions
 
-    filteredSchools.forEach(school => {
+    limitedSchools.forEach(school => {
         const div = document.createElement('div');
         div.textContent = school.Campus;
         div.onclick = function() {

@@ -58,12 +58,12 @@ body {
 
 .suggestions {
     position: absolute;
-    top: 35px; /* Adjust if necessary */
+    top: 40px; /* Adjust if necessary */
     left: 0;
     transform: translateX(3%);
     width: 200px; /* Match the width of your input fields */
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid #f4f4f4;
     border-top: none;
     z-index: 1000;
 }

@@ -1,3 +1,5 @@
+let schoolsData = [];
+
 function loadJSONData(filePath) {
     return fetch(filePath)
         .then(response => {
@@ -13,7 +15,8 @@ function loadJSONData(filePath) {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadJSONData('schools_data.json').then(data => {
-        console.log(data); // This is just for testing to see if data loads
+        schoolsData = data.SCHOOLS; // Assuming the JSON structure has a top-level key "SCHOOLS"
+        console.log(schoolsData); // Check if data is loaded
     });
 });
 

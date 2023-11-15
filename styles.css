@@ -21,9 +21,11 @@ body {
 /* Styling the Search Section */
 
 .search-section {
+    position: relative;
     margin: 20px 0;
     text-align: center;
 }
+
 
 .search-section input[type="text"] {
     width: 200px;
@@ -49,13 +51,17 @@ body {
 /* Search suggestions drop down */
 /* Add to your styles.css */
 .suggestions {
-    border: 1px solid #ddd;
-    border-top: none;
     position: absolute;
+    top: 35px; /* Adjust if necessary */
+    left: 50%; /* Center relative to the search-section */
+    transform: translateX(-75%); /* Adjust horizontal position */
     z-index: 1000;
     width: 200px; /* Match the width of your input fields */
     background: white;
+    border: .5px solid #ddd;
+    border-top: none;
 }
+
 
 .suggestions div {
     padding: 10px;
@@ -65,11 +71,6 @@ body {
 .suggestions div:hover {
     background-color: #f4f4f4;
 }
-
-
-
-
-
 
 
 /* Styling the Data Display Section */

@@ -50,16 +50,22 @@ body {
 
 /* Search suggestions drop down */
 /* Add to your styles.css */
+
+.input-container {
+    position: relative;
+    display: inline-block; /* Or another display type as per your design */
+}
+
 .suggestions {
     position: absolute;
-    top: 40px; /* Adjust if necessary */
-    left: 50%; /* Center relative to the search-section */
-    transform: translateX(-75%); /* Adjust horizontal position */
-    z-index: 1000;
+    top: 35px; /* Adjust if necessary */
+    left: 0;
+    transform: translateX(3%);
     width: 200px; /* Match the width of your input fields */
     background: white;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #ddd;
     border-top: none;
+    z-index: 1000;
 }
 
 

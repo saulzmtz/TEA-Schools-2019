@@ -73,6 +73,8 @@ function displaySchoolData(school1Data, school2Data) {
         <p>County: ${school1Data.County}</p>
         <p>${school1Data.Region}</p>
         <p>${school1Data["School\nType"]}</p>
+        <p>${school1Data["Grades\nServed"]}</p>
+        <p>Charter: ${school1Data.Charter}</p>
     `;
 
     // Display basic information for School 2
@@ -83,8 +85,15 @@ function displaySchoolData(school1Data, school2Data) {
         <p>County: ${school2Data.County}</p>
         <p>${school2Data.Region}</p>
         <p>${school2Data["School\nType"]}</p>
+        <p>${school2Data["Grades\nServed"]}</p>
+        <p>Charter: ${school2Data.Charter}</p>
     `;
+
+
+  
 }
+
+
 
 document.getElementById('compare-button').addEventListener('click', () => {
     const school1Name = document.getElementById('school1-search').value.trim();

@@ -97,6 +97,7 @@ body {
     width: 45%;
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 
@@ -105,7 +106,7 @@ body {
 
 .demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .scores-charts div:hover, .distinctions div:hover {
     transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.1s ease-in-out; */
 }
 
 /* Responsive Design */

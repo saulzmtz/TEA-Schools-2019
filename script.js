@@ -200,17 +200,15 @@ function displayDemographics(containerId, schoolData) {
     const container = document.getElementById(containerId);
     const numberOfStudents = schoolData["Number of\nStudents"];
 
-    // Existing demographic data display
     container.innerHTML = `
-        <h3>${schoolData.Campus}</h3>
-        <p>District: ${schoolData.District}</p>
-        <p>County: ${schoolData.County}</p>
-        <p>${schoolData.Region}</p>
-        <p>${schoolData["School\nType"]}</p>
-        <p>${schoolData["Grades\nServed"]}</p>
-        <p>Charter: ${schoolData.Charter}</p>
-    `;
-
+    <h3 class="school-name">${schoolData.Campus}</h3>
+    <p>District: ${schoolData.District}</p>
+    <p>County: ${schoolData.County}</p>
+    <p>${schoolData.Region}</p>
+    <p>${schoolData["School\nType"]}</p>
+    <p>${schoolData["Grades\nServed"]}</p>
+    <p>Charter: ${schoolData.Charter}</p>
+`;
     // Append the number of students beneath the demographic data
     container.innerHTML += `
         <h3>Number of Students</h3>

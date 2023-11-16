@@ -148,8 +148,19 @@ body {
     margin-bottom: 20px;
 }
 
+
+/* Style for school name */
+.school-name {
+    font-size: 2.5em; /* Larger font size */
+    color: #007bff; /* Matching color with the number of students */
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+/* Style for number of students, ensuring consistency */
 .student-count {
     font-size: 2em;
-    color: #007bff; /* Choose a color that fits your design */
+    color: #007bff;
     font-weight: bold;
+    margin-top: -10px; /* Adjust spacing as needed */
 }

@@ -165,3 +165,11 @@ body {
     font-weight: bold;
     margin-top: -10px; /* Adjust spacing as needed */
 }
+
+
+.overall-grade {
+    font-size: 3em;
+    color: #007bff; /* Adjust the color to match the student count */
+    font-weight: bold;
+    margin-top:-15px; /* Adjust spacing as needed */
+}

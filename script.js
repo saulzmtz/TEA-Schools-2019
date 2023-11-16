@@ -199,6 +199,7 @@ function displayNumberOfStudents(containerId, schoolData) {
 function displayDemographics(containerId, schoolData) {
     const container = document.getElementById(containerId);
     const numberOfStudents = schoolData["Number of\nStudents"];
+    const overallGrade = schoolData["Overall\nRating"]; // Ensure this key matches your JSON data
 
     container.innerHTML = `
     <h3 class="school-name">${schoolData.Campus}</h3>
@@ -208,10 +209,17 @@ function displayDemographics(containerId, schoolData) {
     <p>${schoolData["School\nType"]}</p>
     <p>${schoolData["Grades\nServed"]}</p>
     <p>Charter: ${schoolData.Charter}</p>
+    <h3>Number of Students</h3>
+    <p class="student-count">${numberOfStudents}</p>
 `;
     // Append the number of students beneath the demographic data
+    // container.innerHTML += `
+    //     <h3>Number of Students</h3>
+    //     <p class="student-count">${numberOfStudents}</p>
+    // `;
+    // Append the overall grade beneath the number of students
     container.innerHTML += `
-        <h3>Number of Students</h3>
-        <p class="student-count">${numberOfStudents}</p>
+        <h3>Overall Grade</h3>
+        <p class="overall-grade">${overallGrade}</p>
     `;
 }

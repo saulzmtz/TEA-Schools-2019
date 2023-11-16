@@ -134,14 +134,32 @@ body {
     margin-bottom: 20px;
 }
 
+
 /* Styling for each Canvas inside the Pie Charts Container */
 .pie-charts canvas {
     background-color: white;
     max-width: 250px; 
-    height: auto; 
+    height: 250px; 
     display: block;
-    margin: 0 auto; /* Centers the chart and may help with spacing */
+    margin: 10px; /* Centers the chart and may help with spacing */
 }
+
+/* Styling for each school's chart container */
+.pie-charts > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows the canvases to wrap if needed */
+}
+
+
+
+
+/* .pie-charts div {
+    text-align: center;
+    margin: 10px;
+} */
+
 
 
 .number-of-students {
@@ -173,3 +191,4 @@ body {
     font-weight: bold;
     margin-top:-15px; /* Adjust spacing as needed */
 }
+

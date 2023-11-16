@@ -57,7 +57,7 @@ function updateSuggestions(inputValue, suggestionsElementId) {
     });
 }
 
-// Function to create a pie chart
+
 function createPieChart(chartId, data, label) {
     const ctx = document.getElementById(chartId).getContext('2d');
     new Chart(ctx, {
@@ -72,7 +72,37 @@ function createPieChart(chartId, data, label) {
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false, // This can help control the aspect ratio
+            //added tooltips below
+            
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        let label = data.labels[tooltipItem.index];
+                        let value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        return label + ': ' + value + '%';
+                    }
+                }
+            },
+
+            //end of tooltips
+            layout: {
+                padding: {
+                    top: 5,   // Adjust top padding
+                    bottom: 5 // Adjust bottom padding
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    align: 'start',
+                    labels: {
+                        boxWidth: 20,
+                        padding: 10 // Adjust label padding if needed
+                    }
+                }
+            }
         }
     });
 }

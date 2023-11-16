@@ -96,3 +96,26 @@ school2StudentsChart.innerHTML = `
         <div class="bar" style="width: ${school2StudentsCount / 10}%; background-color: #28a745;"></div>
     </div>
 `;
+
+
+
+// first pieChart function
+// Function to create a pie chart
+function createPieChart(chartId, data, label) {
+    const ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [label, 'Other'],
+            datasets: [{
+                label: label,
+                data: [data, 100 - data],
+                backgroundColor: ['#007bff', '#ddd'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}

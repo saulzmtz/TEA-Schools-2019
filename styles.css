@@ -125,3 +125,18 @@ body {
     }
 }
 
+/* Styling for Pie Chart Container */
+.pie-charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows the charts to wrap onto the next line if needed */
+    margin-bottom: 20px;
+}
+
+/* Styling for each Canvas inside the Pie Charts Container */
+.pie-charts canvas {
+    max-width: 250px; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; /* Centers the chart and may help with spacing */
+}

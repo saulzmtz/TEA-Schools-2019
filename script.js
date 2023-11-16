@@ -57,6 +57,33 @@ function updateSuggestions(inputValue, suggestionsElementId) {
     });
 }
 
+// Function to create a pie chart
+function createPieChart(chartId, data, label) {
+    const ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [label, 'Other'],
+            datasets: [{
+                label: label,
+                data: [data, 100 - data],
+                backgroundColor: ['#007bff', '#ddd'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}
+
+
+
+
+
+
+
+
 
 function displaySchoolData(school1Data, school2Data) {
     // Check if both school data are available
@@ -89,9 +116,19 @@ function displaySchoolData(school1Data, school2Data) {
         <p>Charter: ${school2Data.Charter}</p>
     `;
 
-     
+    // Create pie charts for School 1
+    const school1EconomicPercentage = parseFloat(school1Data["%\nEconomically\nDisadvantaged"].replace('%', ''));
+    const school1EbelPercentage = parseFloat(school1Data["% EB/EL\nStudents"].replace('%', ''));
 
-  
+    createPieChart('school1-economic-chart', school1EconomicPercentage, 'Economically Disadvantaged');
+    createPieChart('school1-ebel-chart', school1EbelPercentage, 'EB/EL Students');
+
+    // Create pie charts for School 2
+    const school2EconomicPercentage = parseFloat(school2Data["%\nEconomically\nDisadvantaged"].replace('%', ''));
+    const school2EbelPercentage = parseFloat(school2Data["% EB/EL\nStudents"].replace('%', ''));
+
+    createPieChart('school2-economic-chart', school2EconomicPercentage, 'Economically Disadvantaged');
+    createPieChart('school2-ebel-chart', school2EbelPercentage, 'EB/EL Students');
 }
 
 

@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Data Comparison</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
       </style>
 </head>
 <body>
     <div class="container">
-      
-
         <div class="search-section">
             <div class="input-container">
                 <input type="text" id="school1-search" placeholder="Enter School 1 Name">
@@ -41,13 +40,12 @@
     </div>
 </div>
 
-
-
-        <!-- Economically Disadvantaged & EB/EL Students Pie Charts -->
-        <div class="economic-ebel-charts">
-            <div id="school1-economic-ebel-chart"></div>
-            <div id="school2-economic-ebel-chart"></div>
-        </div>
+<div class="pie-charts">
+    <canvas id="school1-economic-chart"></canvas>
+    <canvas id="school2-economic-chart"></canvas>
+    <canvas id="school1-ebel-chart"></canvas>
+    <canvas id="school2-ebel-chart"></canvas>
+</div>
 
         <!-- Ratings and Grades Display -->
         <div class="ratings-grades">

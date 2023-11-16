@@ -79,7 +79,7 @@ function createPieChart(chartId, data, label) {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: false, // This can help control the aspect ratio
             //added tooltips below
             
@@ -113,11 +113,6 @@ function createPieChart(chartId, data, label) {
         }
     });
 }
-
-
-
-
-
 
 
 
@@ -166,9 +161,13 @@ function displaySchoolData(school1Data, school2Data) {
 
     createPieChart('school2-economic-chart', school2EconomicPercentage, 'Economically Disadvantaged');
     createPieChart('school2-ebel-chart', school2EbelPercentage, 'EB/EL Students');
+
+     // Display demographics for School 1
+     displayDemographics('school1-demographics', school1Data);
+
+     // Display demographics for School 2
+     displayDemographics('school2-demographics', school2Data);
 }
-
-
 
 document.getElementById('compare-button').addEventListener('click', () => {
     const school1Name = document.getElementById('school1-search').value.trim();
@@ -183,3 +182,38 @@ document.getElementById('compare-button').addEventListener('click', () => {
         console.error('One or both schools not found');
     }
 });
+
+
+function displayNumberOfStudents(containerId, schoolData) {
+    const container = document.getElementById(containerId);
+    // Ensure the key matches the format in your JSON file
+    const numberOfStudents = schoolData["Number of\nStudents"];
+
+    // Update the innerHTML of the container
+    container.innerHTML = `
+        <h3>Number of Students</h3>
+        <p class="student-count">${numberOfStudents}</p>
+    `;
+}
+
+function displayDemographics(containerId, schoolData) {
+    const container = document.getElementById(containerId);
+    const numberOfStudents = schoolData["Number of\nStudents"];
+
+    // Existing demographic data display
+    container.innerHTML = `
+        <h3>${schoolData.Campus}</h3>
+        <p>District: ${schoolData.District}</p>
+        <p>County: ${schoolData.County}</p>
+        <p>${schoolData.Region}</p>
+        <p>${schoolData["School\nType"]}</p>
+        <p>${schoolData["Grades\nServed"]}</p>
+        <p>Charter: ${schoolData.Charter}</p>
+    `;
+
+    // Append the number of students beneath the demographic data
+    container.innerHTML += `
+        <h3>Number of Students</h3>
+        <p class="student-count">${numberOfStudents}</p>
+    `;
+}

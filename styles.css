@@ -135,8 +135,21 @@ body {
 
 /* Styling for each Canvas inside the Pie Charts Container */
 .pie-charts canvas {
+    background-color: white;
     max-width: 250px; 
     height: auto; 
     display: block;
     margin: 0 auto; /* Centers the chart and may help with spacing */
+}
+
+
+.number-of-students {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.student-count {
+    font-size: 2em;
+    color: #007bff; /* Choose a color that fits your design */
+    font-weight: bold;
 }

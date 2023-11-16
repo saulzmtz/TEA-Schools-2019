@@ -1,4 +1,6 @@
 let schoolsData = [];
+let chartInstances = {}; // Object to hold chart instances
+
 
 function loadJSONData(filePath) {
     return fetch(filePath)
@@ -59,8 +61,13 @@ function updateSuggestions(inputValue, suggestionsElementId) {
 
 
 function createPieChart(chartId, data, label) {
-    const ctx = document.getElementById(chartId).getContext('2d');
-    new Chart(ctx, {
+      // If a chart instance already exists for this ID, destroy it
+      if (chartInstances[chartId]) {
+        chartInstances[chartId].destroy();
+    }
+
+     const ctx = document.getElementById(chartId).getContext('2d');
+    chartInstances[chartId] = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: [label, 'Other'],

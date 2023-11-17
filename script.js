@@ -115,6 +115,45 @@ function createPieChart(chartId, data, label) {
 }
 
 
+// Function to create a bar chart
+function createBarChart(chartId, scores) {
+    const ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(scores),
+            datasets: [{
+                label: 'Score',
+                data: Object.values(scores),
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100  // Assuming score is out of 100
+                }
+            }
+        }
+    });
+}
 
 
 function displaySchoolData(school1Data, school2Data) {
@@ -167,6 +206,26 @@ function displaySchoolData(school1Data, school2Data) {
 
      // Display demographics for School 2
      displayDemographics('school2-demographics', school2Data);
+
+      // Extract scores for School 1 and School 2
+    const school1Scores = {
+        'Overall Score': parseFloat(school1Data["Overall\nScore"]),
+        'Student Achievement Score': parseFloat(school1Data["Student\nAchievement\nScore"]),
+        // ... other scores, ensure to use the exact key as in JSON ...
+    };
+
+    const school2Scores = {
+        'Overall Score': parseFloat(school2Data["Overall\nScore"]),
+        'Student Achievement Score': parseFloat(school2Data["Student\nAchievement\nScore"]),
+        // ... other scores ...
+    };
+
+    // Create bar charts for School 1 and School 2
+    // Create bar charts for School 1 and School 2
+    createBarChart('school1-bar-chart', school1Scores);
+    createBarChart('school2-bar-chart', school2Scores);
+
+
 }
 
 document.getElementById('compare-button').addEventListener('click', () => {

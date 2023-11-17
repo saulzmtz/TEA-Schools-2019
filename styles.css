@@ -97,7 +97,7 @@ body {
     width: 45%;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
 
@@ -105,7 +105,7 @@ body {
 
 
 .demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .scores-charts div:hover, .distinctions div:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     /* transition: transform 0.1s ease-in-out; */
 }
 
@@ -192,3 +192,16 @@ body {
     margin-top:-15px; /* Adjust spacing as needed */
 }
 
+.scores-charts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.scores-charts div {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 45%;
+    padding: 20px;
+}

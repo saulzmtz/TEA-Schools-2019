@@ -83,14 +83,14 @@ body {
 
 
 /* Card-like sections for data display */
-.demographic-data, .student-number-charts, .economic-ebel-charts, .ratings-grades, .scores-charts, .distinctions {
+.demographic-data, .student-number-charts, .economic-ebel-charts, .ratings-grades, .scores-charts, .distinctions-tables {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
     padding: 10px;
 }
 
-.demographic-data div, .student-number-charts div, .economic-ebel-charts div, .ratings-grades div, .scores-charts div, .distinctions div {
+.demographic-data div, .student-number-charts div, .economic-ebel-charts div, .ratings-grades div, .scores-charts div, .distinctions-tables div {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -230,4 +230,12 @@ body {
 
 .distinctions-tables th {
     background-color: #f4f4f4;
+}
+
+.earned {
+    background-color: rgb(189, 247, 189);
+}
+
+.not-earned {
+    background-color: rgb(250, 197, 205);
 }

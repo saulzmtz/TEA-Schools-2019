@@ -175,6 +175,42 @@ function createBarChart(chartId, scores) {
 }
 
 
+function displayDistinctionsTable(containerId, schoolData) {
+    const container = document.getElementById(containerId);
+    let tableHTML = '<table><tr><th>Distinction</th><th>Status</th></tr>';
+
+    const distinctions = [
+        "Distinction\nELA/Reading",
+        "Distinction\nMathematics",
+        "Distinction\nScience",
+        "Distinction\nSoc Studies",
+        "Distinction\nProgress",
+        "Distinction\nClosing the Gaps",
+        "Distinction\nPostsecondary\nReadiness"
+    ];
+
+    distinctions.forEach(distinction => {
+        const displayName = distinction.replace(/Distinction\n/, '').replace(/\n/g, ' ');
+        const status = schoolData[distinction];
+        const statusClass = status === "Earned" ? 'earned' : 'not-earned';
+
+        tableHTML += `
+            <tr>
+                <td>${displayName}</td>
+                <td class="${statusClass}">${status}</td>
+            </tr>
+        `;
+    });
+
+    tableHTML += '</table>';
+    container.innerHTML = tableHTML;
+}
+
+
+
+
+
+
 function displaySchoolData(school1Data, school2Data) {
     // Check if both school data are available
     if (!school1Data || !school2Data) {
@@ -248,6 +284,10 @@ function displaySchoolData(school1Data, school2Data) {
     // Create bar charts for School 1 and School 2
     createBarChart('school1-bar-chart', school1Scores);
     createBarChart('school2-bar-chart', school2Scores);
+
+    // Display distinctions table for School 1 and School 2
+    displayDistinctionsTable('school1-distinctions-table', school1Data);
+    displayDistinctionsTable('school2-distinctions-table', school2Data);
 
 
 }

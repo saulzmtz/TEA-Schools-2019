@@ -117,6 +117,11 @@ function createPieChart(chartId, data, label) {
 
 // Function to create a bar chart
 function createBarChart(chartId, scores) {
+      // Check if a chart instance already exists and destroy it
+      if (chartInstances[chartId]) {
+        chartInstances[chartId].destroy();
+    }
+
     const ctx = document.getElementById(chartId).getContext('2d');
     new Chart(ctx, {
         type: 'bar',

@@ -208,3 +208,26 @@ body {
     width: 45%;
     padding: 20px;
 }
+
+
+
+.distinctions-tables {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.distinctions-tables table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.distinctions-tables th, .distinctions-tables td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.distinctions-tables th {
+    background-color: #f4f4f4;
+}

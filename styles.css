@@ -105,8 +105,8 @@ body {
 
 
 .demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .distinctions div:hover {
-    transform: scale(1.1);
-    transition: transform 0.1s ease-in-out;
+    transform: scale(1.05);
+    transition: transform .1s ease-in-out;
 }
 
 

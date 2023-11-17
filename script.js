@@ -61,6 +61,7 @@ function updateSuggestions(inputValue, suggestionsElementId) {
 
 
 function createPieChart(chartId, data, label) {
+
       // If a chart instance already exists for this ID, destroy it
       if (chartInstances[chartId]) {
         chartInstances[chartId].destroy();
@@ -117,13 +118,21 @@ function createPieChart(chartId, data, label) {
 
 // Function to create a bar chart
 function createBarChart(chartId, scores) {
-      // Check if a chart instance already exists and destroy it
-      if (chartInstances[chartId]) {
+    // Debugging: Print chartId and scores
+    console.log("Creating chart:", chartId, scores);
+
+    // Check if a chart instance already exists and destroy it
+    if (chartInstances[chartId]) {
         chartInstances[chartId].destroy();
     }
 
-    const ctx = document.getElementById(chartId).getContext('2d');
-    new Chart(ctx, {
+    // Get the canvas element, clear it, and get its context
+    const canvas = document.getElementById(chartId);
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+    // Create a new chart on the cleared canvas
+    chartInstances[chartId] = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: Object.keys(scores),
@@ -153,7 +162,7 @@ function createBarChart(chartId, scores) {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100  // Assuming score is out of 100
+                    max: 100 // Assuming score is out of 100
                 }
             }
         }

@@ -39,13 +39,13 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #36a2eb;
     color: white;
     cursor: pointer;
 }
 
 .search-section button:hover {
-    background-color: #0056b3;
+    background-color: #73bef1;
 }
 
 /* Search suggestions drop down */
@@ -97,17 +97,20 @@ body {
     width: 45%;
     padding: 20px;
     text-align: center;
-    transition: transform .5s ease-in-out;
+    /* transition: transform 5.25s ease-in-out; */
 }
 
 
 /* Hover Effects  */
 
 
-.demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .scores-charts div:hover, .distinctions div:hover {
-    transform: scale(1.01);
-    /* transition: transform 0.1s ease-in-out; */
+.demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .distinctions div:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
 }
+
+
+/* .scores-charts div:hover */
 
 /* Responsive Design */
 
@@ -171,7 +174,7 @@ body {
 /* Style for school name */
 .school-name {
     font-size: 2.5em; /* Larger font size */
-    color: #007bff; /* Matching color with the number of students */
+    color: #36a2eb; /* Matching color with the number of students */
     font-weight: bold;
     margin-bottom: 10px; /* Adjust spacing as needed */
 }
@@ -179,7 +182,7 @@ body {
 /* Style for number of students, ensuring consistency */
 .student-count {
     font-size: 2em;
-    color: #007bff;
+    color: #36a2eb;
     font-weight: bold;
     margin-top: -10px; /* Adjust spacing as needed */
 }
@@ -187,7 +190,7 @@ body {
 
 .overall-grade {
     font-size: 3em;
-    color: #007bff; /* Adjust the color to match the student count */
+    color: #36a2eb; /* Adjust the color to match the student count */
     font-weight: bold;
     margin-top:-15px; /* Adjust spacing as needed */
 }

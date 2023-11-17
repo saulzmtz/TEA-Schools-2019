@@ -75,7 +75,7 @@ function createPieChart(chartId, data, label) {
             datasets: [{
                 label: label,
                 data: [data, 100 - data],
-                backgroundColor: ['#007bff', '#ddd'],
+                backgroundColor: ['#36a2eb', '#ddd'],
                 borderWidth: 1
             }]
         },
@@ -137,7 +137,7 @@ function createBarChart(chartId, scores) {
         data: {
             labels: Object.keys(scores),
             datasets: [{
-                label: 'Score',
+                label: 'scores',
                 data: Object.values(scores),
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.6)',
@@ -163,6 +163,11 @@ function createBarChart(chartId, scores) {
                 y: {
                     beginAtZero: true,
                     max: 100 // Assuming score is out of 100
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
                 }
             }
         }
@@ -225,16 +230,21 @@ function displaySchoolData(school1Data, school2Data) {
     const school1Scores = {
         'Overall Score': parseFloat(school1Data["Overall\nScore"]),
         'Student Achievement Score': parseFloat(school1Data["Student\nAchievement\nScore"]),
+        'School Progress Score': parseFloat(school1Data["School\nProgress\nScore"]),
+        'Academic Growth Score': parseFloat(school1Data["Academic\nGrowth\nScore"]),
+
         // ... other scores, ensure to use the exact key as in JSON ...
     };
 
     const school2Scores = {
         'Overall Score': parseFloat(school2Data["Overall\nScore"]),
         'Student Achievement Score': parseFloat(school2Data["Student\nAchievement\nScore"]),
+        'School Progress Score': parseFloat(school2Data["School\nProgress\nScore"]),
+        'Academic Growth Score': parseFloat(school2Data["Academic\nGrowth\nScore"]),
         // ... other scores ...
     };
 
-    // Create bar charts for School 1 and School 2
+    
     // Create bar charts for School 1 and School 2
     createBarChart('school1-bar-chart', school1Scores);
     createBarChart('school2-bar-chart', school2Scores);

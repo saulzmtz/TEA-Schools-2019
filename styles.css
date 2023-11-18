@@ -239,3 +239,7 @@ body {
 .not-earned {
     background-color: rgb(250, 197, 205);
 }
+
+.hidden {
+    display: none;
+}

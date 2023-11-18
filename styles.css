@@ -13,8 +13,20 @@ body {
 }
 
 .header {
-    display: inline; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
     background-color: #36a2eb;
+    color: white; 
+}
+
+.image-header {
+    padding-right: 50px; 
+}
+
+.header-text {
+    padding-top: 25px; 
+    font-size: x-large;
 }
 
 

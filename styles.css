@@ -12,6 +12,13 @@ body {
     line-height: 1.6;
 }
 
+.header {
+    display: inline; 
+    background-color: #36a2eb;
+}
+
+
+
 .container {
     width: 90%;
     margin: auto;

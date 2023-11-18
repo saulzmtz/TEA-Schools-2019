@@ -218,6 +218,11 @@ function displaySchoolData(school1Data, school2Data) {
         return;
     }
 
+      // Remove 'hidden' class from elements to make them visible
+      document.querySelectorAll('.hidden').forEach(element => {
+        element.classList.remove('hidden');
+    });
+
     // Display basic information for School 1
     const school1Demo = document.getElementById('school1-demographics');
     school1Demo.innerHTML = `

@@ -15,7 +15,7 @@ body {
 .container {
     width: 90%;
     margin: auto;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Styling the Search Section */
@@ -54,18 +54,20 @@ body {
 .input-container {
     position: relative;
     display: inline-block; /* Or another display type as per your design */
+    margin: 10px; 
+     
 }
 
 .suggestions {
     position: absolute;
-    top: 40px; /* Adjust if necessary */
-    left: 0;
-    transform: translateX(3%);
-    width: 200px; /* Match the width of your input fields */
+    top: 35px; /* Adjust based on your input field's height */
+    left: 5px;
+    width: 200px;
     background: white;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #ddd;
     border-top: none;
-    z-index: 1000;
+    
+     
 }
 
 
@@ -88,6 +90,7 @@ body {
     justify-content: space-around;
     margin-bottom: 20px;
     padding: 10px;
+     
 }
 
 .demographic-data div, .student-number-charts div, .economic-ebel-charts div, .ratings-grades div, .scores-charts div, .distinctions-tables div {
@@ -98,6 +101,7 @@ body {
     padding: 20px;
     text-align: center;
     transition: transform .20s ease-in-out;
+    
 }
 
 
@@ -242,4 +246,9 @@ body {
 
 .hidden {
     display: none;
+}
+
+ 
+.input-container.data-loaded {
+    margin-bottom: 50px; /* Adjust as needed for when data is displayed */
 }

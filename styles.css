@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: row; 
     justify-content: center; 
-    background-color: #36a2eb;
+    background-color: #00a1f1;
     color: white; 
 }
 
@@ -58,7 +58,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #36a2eb;
+    background-color: #00a1f1;
     color: white;
     cursor: pointer;
 }
@@ -128,8 +128,8 @@ body {
 
 
 .demographic-data div:hover, .student-number-charts div:hover, .economic-ebel-charts div:hover, .ratings-grades div:hover, .distinctions div:hover {
-    transform: scale(1.1);
-    transition: transform .20s ease-in-out;
+    transform: scale(1.01);
+    transition: transform .10s ease-in-out;
 }
 
 
@@ -197,7 +197,7 @@ body {
 /* Style for school name */
 .school-name {
     font-size: 2.5em; /* Larger font size */
-    color: #36a2eb; /* Matching color with the number of students */
+    color: #bfbfbf; /* Matching color with the number of students */
     font-weight: bold;
     margin-bottom: 10px; /* Adjust spacing as needed */
 }
@@ -205,7 +205,7 @@ body {
 /* Style for number of students, ensuring consistency */
 .student-count {
     font-size: 2em;
-    color: #36a2eb;
+    color: #bfbfbf;
     font-weight: bold;
     margin-top: -10px; /* Adjust spacing as needed */
 }
@@ -213,7 +213,7 @@ body {
 
 .overall-grade {
     font-size: 3em;
-    color: #36a2eb; /* Adjust the color to match the student count */
+    color: gray; /* Adjust the color to match the student count */
     font-weight: bold;
     margin-top:-15px; /* Adjust spacing as needed */
 }
@@ -256,11 +256,13 @@ body {
 }
 
 .earned {
-    background-color: rgb(189, 247, 189);
+    background-color: #7cbb00;
+    color: white; 
 }
 
 .not-earned {
-    background-color: rgb(250, 197, 205);
+    background-color: #f65314;
+    color: white; 
 }
 
 .hidden {
